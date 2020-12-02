@@ -1,0 +1,12 @@
+INSERT INTO `employee`(`id`, `tipo_identificacion`, `nombres`, `apellidos`, `telefono`, `correo`, `estado`) VALUES (NULL,'7854521','ncaro','xxx','xxx','xxx','activo');
+INSERT INTO `employee`(`id`, `tipo_identificacion`, `nombres`, `apellidos`, `telefono`, `correo`, `estado`) VALUES (NULL,'9635421','juliana','xxx','xxx','xxx','activo');
+INSERT INTO `employee`(`id`, `tipo_identificacion`, `nombres`, `apellidos`, `telefono`, `correo`, `estado`) VALUES (NULL,'7854581','estepfany','xxx','xxx','xxx','activo');
+INSERT INTO `employee`(`id`, `tipo_identificacion`, `nombres`, `apellidos`, `telefono`, `correo`, `estado`) VALUES (NULL,'9635421','camilo','xxx','xxx','xxx','activo');
+INSERT INTO `employee`(`id`, `tipo_identificacion`, `nombres`, `apellidos`, `telefono`, `correo`, `estado`) VALUES (NULL,'7854581','andres','xxx','xxx','xxx','activo');
+INSERT INTO `user` (`id`, `password`, `nickname`, `token`, `id_employee`) VALUES (NULL, '123456', 'ncaro', '1',1);
+INSERT INTO `user` (`id`, `password`, `nickname`, `token`, `id_employee`) VALUES (NULL, '123456', 'juliana', '2',2);
+INSERT INTO `user` (`id`, `password`, `nickname`, `token`, `id_employee`) VALUES (NULL, '123456', 'estepfany', '3',3);
+INSERT INTO `user` (`id`, `password`, `nickname`, `token`, `id_employee`) VALUES (NULL, '123456', 'camilo', '3',4);
+INSERT INTO `user` (`id`, `password`, `nickname`, `token`, `id_employee`) VALUES (NULL, '123456', 'andres', '3',5);
+INSERT INTO `client`(`id`, `tipo_identificacion`, `nombres`, `apellidos`, `telefono`, `correo`, `matricula`,`estado`) VALUES (NULL,'852456','pipa','de avila','xxx','xxx','HSK-787-VGB','activo');
+INSERT INTO `assistance`(`id`, `fecha_entrada`, `hora`, `observacion`, `id_client`) VALUES (NULL,'2020-11-10','10:30 am','Ninguna',1);
