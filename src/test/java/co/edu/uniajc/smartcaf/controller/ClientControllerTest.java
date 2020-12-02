@@ -1,6 +1,5 @@
 package co.edu.uniajc.smartcaf.controller;
 
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.net.URI;
@@ -19,11 +18,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
-import co.edu.uniajc.smartcaf.model.User;
+import co.edu.uniajc.smartcaf.model.Client;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-class UserControllerTest {
+class ClientControllerTest {
 
 	@LocalServerPort
 	int randomServerPort;
@@ -31,9 +30,9 @@ class UserControllerTest {
 	String url = "http://localhost:";
 
 	@Test
-	public void testGetUsers() throws URISyntaxException {
+	public void testGetClients() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/user";
+		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/client";
 		URI uri = new URI(baseUrl);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -44,9 +43,9 @@ class UserControllerTest {
 	}
 	
 	@Test
-	public void testGetUserById() throws URISyntaxException {
+	public void testGetClientById() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/user/"+ "1";
+		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/client/"+ "1";
 		URI uri = new URI(baseUrl);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -57,43 +56,51 @@ class UserControllerTest {
 	}
 
 	@Test
-	public void testPostUser() throws URISyntaxException {
+	public void testPostClient() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/user";
+		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/client";
 		URI uri = new URI(baseUrl);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Authorization","Bearer " +"04e449a1-3d7e-45e2-beaf-5654d73bb052");
-		User user = new User();
-		user.setNickname("sample");
-		user.setPassword("sample");
-		user.setToken("1");
-		HttpEntity<User> request = new HttpEntity<>(user,headers);
+		Client client = new Client();
+		client.setTipoIdentificacion("sample");
+		client.setNombres("sample");
+		client.setApellidos("sample");
+		client.setTelefono("sample");
+		client.setCorreo("sample");
+		client.setEstado("sample");
+		client.setMatricula("sample");
+		HttpEntity<Client> request = new HttpEntity<>(client,headers);
 		ResponseEntity<String> result = restTemplate.exchange(uri,HttpMethod.POST,request,String.class);
 	    assertEquals(200, result.getStatusCodeValue());
 	}
 	
 	@Test
-	public void testPutUser() throws URISyntaxException {
+	public void testPutClient() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/user/" + "5";
+		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/client/" + "5";
 		URI uri = new URI(baseUrl);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Authorization","Bearer " +"04e449a1-3d7e-45e2-beaf-5654d73bb052");
-		User user = new User();
-		user.setNickname("sample-edit");
-		user.setPassword("sample-edit");
-		user.setToken("2");
-		HttpEntity<User> request = new HttpEntity<>(user,headers);
+		Client client = new Client();
+		client.setTipoIdentificacion("sample");
+		client.setNombres("sample");
+		client.setApellidos("sample");
+		client.setTelefono("sample");
+		client.setCorreo("sample");
+		client.setEstado("sample");
+		client.setMatricula("sample");
+		HttpEntity<Client> request = new HttpEntity<>(client,headers);
 		ResponseEntity<String> result = restTemplate.exchange(uri,HttpMethod.PUT,request,String.class);
 	    assertEquals(200, result.getStatusCodeValue());
 	}
 	
 	@Test
-	public void testDeleteUser() throws URISyntaxException {
+	public void testDeleteClient() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/user/" + "6";
+		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/client/" + "6";
 		URI uri = new URI(baseUrl);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
