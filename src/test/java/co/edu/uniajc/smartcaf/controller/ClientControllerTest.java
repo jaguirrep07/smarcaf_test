@@ -79,19 +79,19 @@ class ClientControllerTest {
 	@Test
 	public void testPutClient() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/client/" + "5";
+		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/client/" + "1";
 		URI uri = new URI(baseUrl);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
 		headers.add("Authorization","Bearer " +"04e449a1-3d7e-45e2-beaf-5654d73bb052");
 		Client client = new Client();
-		client.setTipoIdentificacion("sample");
-		client.setNombres("sample");
-		client.setApellidos("sample");
-		client.setTelefono("sample");
-		client.setCorreo("sample");
-		client.setEstado("sample");
-		client.setMatricula("sample");
+		client.setTipoIdentificacion("sample2");
+		client.setNombres("sample2");
+		client.setApellidos("sample2");
+		client.setTelefono("sample2");
+		client.setCorreo("sample2");
+		client.setEstado("sample2");
+		client.setMatricula("sample2");
 		HttpEntity<Client> request = new HttpEntity<>(client,headers);
 		ResponseEntity<String> result = restTemplate.exchange(uri,HttpMethod.PUT,request,String.class);
 	    assertEquals(200, result.getStatusCodeValue());
@@ -100,7 +100,7 @@ class ClientControllerTest {
 	@Test
 	public void testDeleteClient() throws URISyntaxException {
 		RestTemplate restTemplate = new RestTemplate();
-		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/client/" + "6";
+		final String baseUrl = url + randomServerPort + "/smartcaf/api/v1/client/" + "2";
 		URI uri = new URI(baseUrl);
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
